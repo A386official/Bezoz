@@ -1,0 +1,263 @@
+/* Import futuristic fonts and Font Awesome icons */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600;800&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+:root {
+    --primary-color: #00d1ff;  /* Blue */
+    --secondary-color: #ff00ff;
+    --background-gradient: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    --button-gradient: linear-gradient(90deg, #00d1ff, #0077b6); /* Blue gradient */
+    --glow-color: rgba(0, 209, 255, 0.5);
+    --border-radius: 12px;
+    --shadow-color: rgba(0, 209, 255, 0.7);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--background-gradient);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+}
+
+/* Navbar */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#nav-links a {
+    margin: 0 20px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#nav-links a:hover {
+    color: var(--primary-color);
+}
+
+#social-links i {
+    font-size: 30px;
+    color: white;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+#social-links i:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px var(--primary-color));
+}
+
+/* Hero Section */
+#hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 100px 10%;
+    position: relative;
+}
+
+#hero-text {
+    max-width: 50%;
+}
+
+#hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    color: white;
+}
+
+#hero span {
+    color: var(--secondary-color);
+    text-shadow: 0 0 30px var(--secondary-color);
+}
+
+#hero p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+#hero-buttons .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 20px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: white;
+    background: var(--button-gradient);
+    box-shadow: 0 6px 20px var(--shadow-color);
+    transition: all 0.3s ease-in-out;
+}
+
+#hero-buttons .btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 40px var(--shadow-color);
+}
+
+#hero-buttons .btn img {
+    width: 24px;
+    margin-right: 10px;
+}
+
+#hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+}
+
+.image-container {
+    background-color: #1a1a1a;
+    border: 4px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 20px var(--glow-color);
+    overflow: hidden;
+    transform: perspective(600px) rotateY(15deg);
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.image-container img:hover {
+    transform: scale(1.05) rotateY(-10deg);
+}
+
+/* Tokenomics & Roadmap */
+.section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    text-shadow: 0 0 20px var(--glow-color);
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 1.3rem;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Roadmap Section */
+#roadmap {
+    background-color: #111;
+    padding: 80px 10%;
+    text-align: center;
+}
+
+#roadmap h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+#roadmap .phase {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 15px rgba(0, 209, 255, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.8s forwards;
+}
+
+#roadmap .phase:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+#roadmap .phase:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+#roadmap .phase:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+#roadmap .phase h3 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+#roadmap .phase p {
+    font-size: 1.3rem;
+    color: white;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+footer {
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: white;
+}
+/* Tokenomics Section Styles */
+#tokenomics {
+    background-color: #111;
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.tokenomics-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 15px var(--glow-color);
+    padding: 30px;
+}
+
+.tokenomics-item {
+    margin-bottom: 20px;
+}
+
+.tokenomics-item h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.tokenomics-item p {
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 5px;
+}
